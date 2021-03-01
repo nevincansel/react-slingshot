@@ -10,6 +10,7 @@ jobs:
       - run:
           name: Build
           command: |
+            npm i
             npm run lint
       - run:
           name: Throw Error
@@ -25,7 +26,8 @@ jobs:
       - run:
           name: Test
           command: |
-           npm run test
+            npm i
+            npm run test
 
   analyze:
     docker:
@@ -35,7 +37,7 @@ jobs:
       - run:
           name: Audit
           command: |
-           npm run audit
+            npm run audit
 
 
 workflows:
